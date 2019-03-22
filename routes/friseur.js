@@ -7,7 +7,7 @@ let FriseurStatus = {
     schneidend: "schneidend"
 };
 
-const dauerHaareSchneiden = 20; // Zeit in ms
+const dauerHaareSchneiden = 1000; // Zeit in ms
 
 // Im Friseur-Objekt merken wir uns den Status des Friseurs
 // und (falls gerade vorhanden) welcher Kunde gerade bearbeitet wird.
@@ -60,6 +60,7 @@ function wartezimmerErgebnis(error, response, body) {
     if (body.length == 0) {
         // Niemand da --> Friseur legt sich schlafen
         friseur.status = FriseurStatus.schlafend;
+        console.log('Ich bin '+friseur.status);
     } else {
         // Jemand im Wartezimmer: Friseur nimmt den nächsten Kunden ran
         Request.delete({

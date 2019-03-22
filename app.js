@@ -20,6 +20,8 @@ app.use('/friseur', friseur);
 app.use('/wartezimmer', wartezimmer);
 
 
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     res.status(404);
